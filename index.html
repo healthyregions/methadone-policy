@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Methadone Availability Scenarios</title>
+
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes" /> 
+
+
+	<!-- CSS only -->
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+
+	  <link href="tree.css" rel="stylesheet">
+
+
+	<!-- JS only -->
+  	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+	
+
+	<style> 
+		body { margin: 0; padding: 0; } 
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; }; 
+	</style> 
+
+</head>
+
+
+
+<body> 
+
+	<div class="panel" tabindex="0">
+    	
+    	<h1> Methadone Treatment Access Scenarios </h1>
+    	
+    	<p class="text-muted"> Joudrey et al, 2023 in press. </p>
+
+    	<p><b> Current Availability </b> Within 30 minutes driving time of a methadone maintenance clinic. </p>
+   
+	</div>
+
+
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+	
+	<link
+	rel="stylesheet"
+	href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+	type="text/css"
+	/>
+
+	<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+	<div id='map'></div> 
+	
+	<script> 
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaGVyb3AtbGFiIiwiYSI6ImNsbGw0ZGI5ZDE3NWQzbW1rdGdqYnhqcWUifQ.RsuAn7wOL7ztpUiT_xBitA'; // 
+
+	var map = new mapboxgl.Map({ 
+		container: 'map', 
+		style: 'mapbox://styles/herop-lab/clmqqc7ms052g01qxh1gk6dq2', 
+		zoom: 5,                                                 
+		center: [-79.9949367598334, 40.44065875400719]                           
+
+	 }); 
+
+	map.addControl(
+		new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
+		mapboxgl: mapboxgl
+		})
+	 );
+
+	// Add zoom and rotation controls to the map.
+	var nav = new mapboxgl.NavigationControl();
+		
+		map.addControl(nav, 'bottom-right');
+
+	</script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+
+  .panel {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 480px;
+    max-height: 160px; 
+    opacity: .8;
+    background: #fff ;
+    color: #545454;
+    padding: 20px 24px 12px 24px;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: none;
+    z-index: 9092;
+    border-radius: 0px 0px 10px 0px;
+  }
+
