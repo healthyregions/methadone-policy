@@ -17,6 +17,11 @@
 
 	  <link href="tree.css" rel="stylesheet">
 
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+
+
 
 	<!-- JS only -->
   	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -35,16 +40,31 @@
 
 <body> 
 
+
 	<div class="panel" tabindex="0">
     	
-    	<h1> Methadone Treatment Access Scenarios </h1>
+    	<h1 > Methadone Treatment Access Scenarios</h1>
     	
-    	<p class="text-muted"> Joudrey et al, 2023 in press. </p>
+    	<p class="text-muted"> <a class="text-secondary href="/#"> Joudrey et al, 2023 in press. </a> </p>
 
-    	<p><b> Current Availability </b> Within 30 minutes driving time of a methadone maintenance clinic. </p>
-   
+    	<p><img src="images/orange.png" height="15"><b> Current Availability </b> Within 30 minutes driving time of a methadone maintenance clinic. </p>
+
+    	<p><img src="images/lt-blue.png" height="15"><b> Addition of specialist physician prescribing </b> Current access plus within 30 minutes* driving time to any Opioid Treatment Provider or not in a HRSA Mental Health Shortage Area. </p>
+
+    	<p><img src="images/dk-blue.png" height="15"><b> Addition of clinician prescribing</b> Proposed access plus within 30 minutes* driving time to a Federally Qualified Health Clinic (FQHC). </p>
+
+    	<p><img src="images/gray.png" height="15"><b> Still No Access Under Enhanced</b> </p>
+
+    	<p><img src="images/white.png" height="15"><b> Missing Data/ Excluded</b> </p>
+
+    	<p class="text-muted"> *20 minutes for urban areas </p>
+
+    	<hr>
+
+    	<p class="text-muted"> This web map is a regional explorer; zoom into view locations. For a national view, download a <a href="images/access_scenarios_map_web.jpg">high-resolution image</a> of the map.</p>
+
+
 	</div>
-
 
 	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
 	
@@ -66,7 +86,7 @@
 	var map = new mapboxgl.Map({ 
 		container: 'map', 
 		style: 'mapbox://styles/herop-lab/clmqqc7ms052g01qxh1gk6dq2', 
-		zoom: 5,                                                 
+		zoom: 6,                                                 
 		center: [-79.9949367598334, 40.44065875400719]                           
 
 	 }); 
